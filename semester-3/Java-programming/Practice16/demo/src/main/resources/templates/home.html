@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <title>Home</title>
+</head>
+
+<body>
+    <h1>Добро пожаловать, <span th:text="${username}">Пользователь</span></h1>
+
+    <h2>Конвертер валют</h2>
+    <form th:action="@{/home}" method="post">
+        <input type="hidden" name="formType" value="convert" />
+        <label>Сумма:</label>
+        <input type="number" name="amount" step="0.01" required /><br />
+        <label>Из валюты:</label>
+        <select name="fromCurrency">
+            <option value="USD">USD</option>
+            <option value="EUR">EUR</option>
+            <option value="RUB">RUB</option>
+        </select><br />
+        <label>В валюту:</label>
+        <select name="toCurrency">
+            <option value="RUB">RUB</option>
+            <option value="USD">USD</option>
+            <option value="EUR">EUR</option>
+        </select><br />
+        <button type="submit">Конвертировать</button>
+    </form>
+
+    <p th:if="${conversionResult}" th:text="${conversionResult}"></p>
+
+</body>
+
+</html>

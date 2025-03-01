@@ -1,5 +1,6 @@
 package com.example.volkov_av;
 
+import android.annotation.SuppressLint;
 import android.os.Bundle;
 import android.widget.TextView;
 
@@ -10,6 +11,7 @@ import java.util.Objects;
 
 public class NewActivity extends AppCompatActivity {
 
+    @SuppressLint("SetTextI18n")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -23,11 +25,11 @@ public class NewActivity extends AppCompatActivity {
 
         Bundle arguments = getIntent().getExtras();
         if (arguments != null) {
-            String name = arguments.get("Name").toString();
-            String group = arguments.get("Group").toString();
-            String age = arguments.get("Age").toString();
-            String mark = arguments.get("Mark").toString();
-            messageText.setText("\n\n\nName: " + name + "\nGroup: " + group + "\nAge: " + age + "\nMark: " + mark);
+            String name = Objects.requireNonNull(arguments.get("Name")).toString();
+            String group = Objects.requireNonNull(arguments.get("Group")).toString();
+            String age = Objects.requireNonNull(arguments.get("Age")).toString();
+            String mark = Objects.requireNonNull(arguments.get("Mark")).toString();
+            messageText.setText("\n\nName: " + name + "\nGroup: " + group + "\nAge: " + age + "\nMark: " + mark);
         }
 
     }

@@ -28,7 +28,7 @@ public class MainActivity extends AppCompatActivity {
         EditText nameText = findViewById(R.id.editName);
         EditText groupNum = findViewById(R.id.editGroupNum);
         EditText Age = findViewById(R.id.editAge);
-        EditText Mark = findViewById(R.id.editMark);;
+        EditText Mark = findViewById(R.id.editMark);
 
         String name = nameText.getText().toString();
         String group = groupNum.getText().toString();
@@ -55,13 +55,8 @@ public class MainActivity extends AppCompatActivity {
         Log.d(TAG, "MainActivity: onResume()");
         Toast.makeText(getApplicationContext(), "Volkov A.V. IKBO-66-23", Toast.LENGTH_SHORT).show();
         Button myButton = findViewById(R.id.buttonProgrammatically);
-        myButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                // Действие при нажатии на кнопку, например:
-                onNextActivity(v);
-            }
-        });
+        // Действие при нажатии на кнопку, например:
+        myButton.setOnClickListener(this::onNextActivity);
     }
 
     @Override

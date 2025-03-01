@@ -22,12 +22,24 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         Log.d(TAG, "MainActivity: onCreate()");
     }
+
     public void onNextActivity(View view) {
         Toast.makeText(this, "Next Activity", Toast.LENGTH_SHORT).show();
-        EditText nameText = findViewById(R.id.editTextText2);
+        EditText nameText = findViewById(R.id.editName);
+        EditText groupNum = findViewById(R.id.editGroupNum);
+        EditText Age = findViewById(R.id.editAge);
+        EditText Mark = findViewById(R.id.editMark);;
+
         String name = nameText.getText().toString();
+        String group = groupNum.getText().toString();
+        String age = Age.getText().toString();
+        String mark = Mark.getText().toString();
+
         Intent intent = new Intent(this, NewActivity.class);
         intent.putExtra("Name", name);
+        intent.putExtra("Group", group);
+        intent.putExtra("Age", age);
+        intent.putExtra("Mark", mark);
         startActivity(intent);
     }
 
@@ -42,12 +54,12 @@ public class MainActivity extends AppCompatActivity {
         super.onResume();
         Log.d(TAG, "MainActivity: onResume()");
         Toast.makeText(getApplicationContext(), "Volkov A.V. IKBO-66-23", Toast.LENGTH_SHORT).show();
-        Button myButton = findViewById(R.id.button);
+        Button myButton = findViewById(R.id.buttonProgrammatically);
         myButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 // Действие при нажатии на кнопку, например:
-                Toast.makeText(getApplicationContext(), "Click", Toast.LENGTH_SHORT).show();
+                onNextActivity(v);
             }
         });
     }

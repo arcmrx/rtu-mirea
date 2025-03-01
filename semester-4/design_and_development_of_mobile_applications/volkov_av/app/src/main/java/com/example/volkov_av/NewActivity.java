@@ -6,6 +6,8 @@ import android.widget.TextView;
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
 
+import java.util.Objects;
+
 public class NewActivity extends AppCompatActivity {
 
     @Override
@@ -25,8 +27,8 @@ public class NewActivity extends AppCompatActivity {
             String group = arguments.get("Group").toString();
             String age = arguments.get("Age").toString();
             String mark = arguments.get("Mark").toString();
-            messageText.setText("\n\n\nName: " + name + "\nGroup: " + group + "\nAge: " + age + "\nMark: " + mark);
+            messageText.setText("\n\nName: " + name + "\nGroup: " + group + "\nAge: " + age + "\nMark: " + mark);
         }
-        setContentView(messageText);
+
     }
 }

@@ -5,4 +5,6 @@
     <string name="_23">23</string>
     <string name="hi_it_s_me">Hi! It`s me ↓↓↓</string>
     <string name="none">None</string>
+    <string name="declaratively">Declaratively</string>
+    <string name="programmatically">Programmatically</string>
 </resources>

@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/main"
@@ -8,179 +9,163 @@
     android:background="@color/md_theme_onBackground"
     tools:context=".MainActivity">
 
-    <Button
-        android:id="@+id/buttonDeclaratively"
-        style="@android:style/Widget.DeviceDefault.Button"
-        android:layout_width="241dp"
-        android:layout_height="69dp"
-        android:backgroundTint="@color/md_theme_inverseSurface_mediumContrast"
-        android:onClick="onNextActivity"
-        android:text="@string/declaratively"
-        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
-        android:textColor="@color/md_theme_inversePrimary"
-        android:textSize="16sp"
-        android:visibility="visible"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.501"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.065" />
 
-    <Button
-        android:id="@+id/buttonProgrammatically"
-        style="@android:style/Widget.DeviceDefault.Button"
-        android:layout_width="241dp"
-        android:layout_height="69dp"
-        android:backgroundTint="@color/md_theme_inverseSurface_mediumContrast"
-        android:text="@string/programmatically"
-        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
-        android:textColor="@color/md_theme_inversePrimary"
-        android:textSize="16sp"
-        android:visibility="visible"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.502"
-        app:layout_constraintStart_toStartOf="parent"
+    <!-- LinearLayout: Кнопки в табличке -->
+    <LinearLayout
+        android:id="@+id/buttonsLayout"
+        android:orientation="vertical"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="48dp"
+        android:gravity="center"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.176" />
-
-    <EditText
-        android:id="@+id/editMark"
-        android:layout_width="241dp"
-        android:layout_height="55dp"
-        android:autofillHints=""
-        android:background="@color/material_dynamic_neutral_variant20"
-        android:ems="10"
-        android:inputType="text"
-        android:textColor="@color/material_dynamic_neutral70"
-        android:textScaleX="1"
-        android:textSize="24sp"
-        android:visibility="visible"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.922"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.791"
-        tools:ignore="LabelFor"
-        tools:visibility="visible" />
+        app:layout_constraintEnd_toEndOf="parent">
 
-    <EditText
-        android:id="@+id/editGroupNum"
-        android:layout_width="241dp"
-        android:layout_height="55dp"
-        android:autofillHints=""
-        android:background="@color/material_dynamic_neutral_variant20"
-        android:ems="10"
-        android:inputType="text"
-        android:textColor="@color/material_dynamic_neutral70"
-        android:textScaleX="1"
-        android:textSize="24sp"
-        android:visibility="visible"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.922"
+        <Button
+            android:id="@+id/buttonProgrammatically"
+            android:layout_width="241dp"
+            android:layout_height="69dp"
+            android:backgroundTint="@color/md_theme_inverseSurface_mediumContrast"
+            android:onClick="onNextActivity"
+            android:text="@string/Run1"
+            android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+            android:textSize="16sp"
+            app:layout_constraintTop_toBottomOf="@+id/textMessage"
+            />
+
+
+        <Button
+            android:id="@+id/buttonProgrammatically2"
+            android:layout_width="241dp"
+            android:layout_height="69dp"
+            android:backgroundTint="@color/md_theme_inverseSurface_mediumContrast"
+            android:text="@string/Run2"
+            android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+            android:textSize="16sp" />
+    </LinearLayout>
+
+    <!-- RelativeLayout: Относительно друг друга -->
+    <RelativeLayout
+        android:id="@+id/relativeInputs"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="16dp"
+        app:layout_constraintTop_toBottomOf="@+id/buttonsLayout"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.635"
-        tools:ignore="LabelFor"
-        tools:visibility="visible" />
+        app:layout_constraintEnd_toEndOf="parent">
 
-    <EditText
-        android:id="@+id/editName"
-        android:layout_width="241dp"
-        android:layout_height="55dp"
-        android:autofillHints=""
-        android:background="@color/material_dynamic_neutral_variant20"
-        android:ems="10"
-        android:inputType="text"
-        android:textColor="@color/material_dynamic_neutral70"
-        android:textScaleX="1"
-        android:textSize="24sp"
-        android:visibility="visible"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.922"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.56"
-        tools:ignore="LabelFor"
-        tools:visibility="visible" />
+        <TextView
+            android:id="@+id/textFIO"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/FullName"
+            android:textSize="@dimen/text_size_large"/>
 
-    <EditText
-        android:id="@+id/editAge"
-        android:layout_width="241dp"
-        android:layout_height="55dp"
-        android:autofillHints=""
-        android:background="@color/material_dynamic_neutral_variant20"
-        android:ems="10"
-        android:inputType="text"
-        android:textColor="@color/material_dynamic_neutral70"
-        android:textScaleX="1"
-        android:textSize="24sp"
-        android:visibility="visible"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.922"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.715"
-        tools:ignore="LabelFor"
-        tools:visibility="visible" />
+        <EditText
+            android:id="@+id/editName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/textFIO"
+            android:layout_marginTop="8dp"
+            android:autofillHints=""
+            android:background="@color/material_dynamic_neutral_variant20"
+            android:hint="@string/FullNameText"
+            android:inputType="textPersonName"
+            android:minHeight="48dp"
+            android:textColor="@color/material_dynamic_neutral70"
+            android:textSize="@dimen/text_size_small"
+            tools:ignore="LabelFor,VisualLintTextFieldSize" />
 
-    <TextView
-        android:id="@+id/textFIO"
+        <TextView
+            android:id="@+id/textGroupNum"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/GroupNum"
+            android:textSize="@dimen/text_size_large"
+            android:layout_below="@id/editName"
+            android:layout_marginTop="16dp" />
+
+        <EditText
+            android:id="@+id/editGroupNum"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/textGroupNum"
+            android:layout_marginTop="8dp"
+            android:autofillHints=""
+            android:background="@color/material_dynamic_neutral_variant20"
+            android:hint="@string/GroupNumText"
+            android:inputType=""
+            android:minHeight="48dp"
+            android:textColor="@color/material_dynamic_neutral70"
+            android:textSize="@dimen/text_size_small"
+            tools:ignore="LabelFor,VisualLintTextFieldSize" />
+
+        <TextView
+            android:id="@+id/textAge"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/age"
+            android:textSize="@dimen/text_size_large"
+            android:layout_below="@id/editGroupNum"
+            android:layout_marginTop="16dp" />
+
+        <EditText
+            android:id="@+id/editAge"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/textAge"
+            android:layout_marginTop="8dp"
+            android:autofillHints=""
+            android:background="@color/material_dynamic_neutral_variant20"
+            android:hint="@string/AgeText"
+            android:inputType=""
+            android:minHeight="48dp"
+            android:textColor="@color/material_dynamic_neutral70"
+            android:textSize="@dimen/text_size_small"
+            tools:ignore="LabelFor,VisualLintTextFieldSize" />
+
+        <TextView
+            android:id="@+id/textMark"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/mark"
+            android:textSize="@dimen/text_size_large"
+            android:layout_below="@id/editAge"
+            android:layout_marginTop="16dp" />
+
+        <EditText
+            android:id="@+id/editMark"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/textMark"
+            android:layout_marginTop="8dp"
+            android:autofillHints=""
+            android:background="@color/material_dynamic_neutral_variant20"
+            android:hint="@string/markText"
+            android:inputType=""
+            android:minHeight="48dp"
+            android:textColor="@color/material_dynamic_neutral70"
+            android:textSize="@dimen/text_size_small"
+            tools:ignore="LabelFor,VisualLintTextFieldSize" />
+    </RelativeLayout>
+
+    <!-- FrameLayout: Поверх всего -->
+    <FrameLayout
+        android:id="@+id/frameExample"
         android:layout_width="150dp"
-        android:layout_height="55dp"
-        android:text="ФИО"
-        android:textSize="34sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/editName"
-        app:layout_constraintHorizontal_bias="0.512"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.56" />
-
-    <TextView
-        android:id="@+id/textGroupNum"
-        android:layout_width="150dp"
-        android:layout_height="55dp"
+        android:layout_height="150dp"
         android:layout_marginTop="16dp"
-        android:text="№"
-        android:textSize="34sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/editGroupNum"
-        app:layout_constraintHorizontal_bias="0.512"
+        app:layout_constraintTop_toBottomOf="@+id/relativeInputs"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textFIO"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintEnd_toEndOf="parent"
+        tools:ignore="VisualLintBounds">
 
-    <TextView
-        android:id="@+id/textAge"
-        android:layout_width="150dp"
-        android:layout_height="55dp"
-        android:layout_marginTop="20dp"
-        android:text="Возраст"
-        android:textSize="34sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/editAge"
-        app:layout_constraintHorizontal_bias="0.512"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textGroupNum"
-        app:layout_constraintVertical_bias="0.0" />
-
-    <TextView
-        android:id="@+id/textMark"
-        android:layout_width="150dp"
-        android:layout_height="55dp"
-        android:text="Оценка"
-        android:textSize="34sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/editMark"
-        app:layout_constraintHorizontal_bias="0.512"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textAge"
-        app:layout_constraintVertical_bias="0.075" />
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:contentDescription="@string/MyMemogi"
+            android:src="@drawable/memogi" />
+    </FrameLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

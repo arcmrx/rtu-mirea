@@ -12,7 +12,6 @@ import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
 
 public class MainActivity extends AppCompatActivity {
-
     private static final String TAG = "Lifecycle";
 
     @Override
@@ -21,6 +20,9 @@ public class MainActivity extends AppCompatActivity {
         EdgeToEdge.enable(this);
         setContentView(R.layout.activity_main);
         Log.d(TAG, "MainActivity: onCreate()");
+
+        Button myButton = findViewById(R.id.buttonProgrammatically);
+        myButton.setOnClickListener(this::onNextActivity);
     }
 
     public void onNextActivity(View view) {
@@ -35,11 +37,10 @@ public class MainActivity extends AppCompatActivity {
         String age = Age.getText().toString();
         String mark = Mark.getText().toString();
 
+
+        MyObject myObject = new MyObject(name, group, age, mark);
         Intent intent = new Intent(this, NewActivity.class);
-        intent.putExtra("Name", name);
-        intent.putExtra("Group", group);
-        intent.putExtra("Age", age);
-        intent.putExtra("Mark", mark);
+        intent.putExtra("myObject", myObject);
         startActivity(intent);
     }
 
@@ -54,9 +55,6 @@ public class MainActivity extends AppCompatActivity {
         super.onResume();
         Log.d(TAG, "MainActivity: onResume()");
         Toast.makeText(getApplicationContext(), "Volkov A.V. IKBO-66-23", Toast.LENGTH_SHORT).show();
-        Button myButton = findViewById(R.id.buttonProgrammatically);
-        // Действие при нажатии на кнопку, например:
-        myButton.setOnClickListener(this::onNextActivity);
     }
 
     @Override

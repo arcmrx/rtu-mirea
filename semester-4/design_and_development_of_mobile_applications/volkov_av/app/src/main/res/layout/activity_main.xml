@@ -10,57 +10,38 @@
     tools:context=".MainActivity">
 
 
-    <!-- LinearLayout: Кнопки в табличке -->
-    <LinearLayout
-        android:id="@+id/buttonsLayout"
-        android:orientation="vertical"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="48dp"
-        android:gravity="center"
-        app:layout_constraintTop_toTopOf="parent"
+    <Button
+        android:id="@+id/buttonProgrammatically"
+        android:layout_width="241dp"
+        android:layout_height="69dp"
+        android:backgroundTint="@color/md_theme_inverseSurface_mediumContrast"
+        android:onClick="onActivity2"
+        android:text="@string/Run1"
+        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.502"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent">
+        app:layout_constraintTop_toBottomOf="@+id/relativeInputs"
+        tools:ignore="MissingConstraints" />
 
-        <Button
-            android:id="@+id/buttonProgrammatically"
-            android:layout_width="241dp"
-            android:layout_height="69dp"
-            android:backgroundTint="@color/md_theme_inverseSurface_mediumContrast"
-            android:onClick="onNextActivity"
-            android:text="@string/Run1"
-            android:textAppearance="@style/TextAppearance.AppCompat.Medium"
-            android:textSize="16sp"
-            app:layout_constraintTop_toBottomOf="@+id/textMessage"
-            />
-
-
-        <Button
-            android:id="@+id/buttonProgrammatically2"
-            android:layout_width="241dp"
-            android:layout_height="69dp"
-            android:backgroundTint="@color/md_theme_inverseSurface_mediumContrast"
-            android:text="@string/Run2"
-            android:textAppearance="@style/TextAppearance.AppCompat.Medium"
-            android:textSize="16sp" />
-    </LinearLayout>
-
-    <!-- RelativeLayout: Относительно друг друга -->
     <RelativeLayout
         android:id="@+id/relativeInputs"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:padding="16dp"
-        app:layout_constraintTop_toBottomOf="@+id/buttonsLayout"
+        android:padding="76dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent">
+        app:layout_constraintTop_toTopOf="parent">
 
         <TextView
             android:id="@+id/textFIO"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/FullName"
-            android:textSize="@dimen/text_size_large"/>
+            android:textColor="#FFFFFF"
+            android:textSize="@dimen/text_size_large" />
 
         <EditText
             android:id="@+id/editName"
@@ -77,95 +58,5 @@
             android:textSize="@dimen/text_size_small"
             tools:ignore="LabelFor,VisualLintTextFieldSize" />
 
-        <TextView
-            android:id="@+id/textGroupNum"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/GroupNum"
-            android:textSize="@dimen/text_size_large"
-            android:layout_below="@id/editName"
-            android:layout_marginTop="16dp" />
-
-        <EditText
-            android:id="@+id/editGroupNum"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/textGroupNum"
-            android:layout_marginTop="8dp"
-            android:autofillHints=""
-            android:background="@color/material_dynamic_neutral_variant20"
-            android:hint="@string/GroupNumText"
-            android:inputType=""
-            android:minHeight="48dp"
-            android:textColor="@color/material_dynamic_neutral70"
-            android:textSize="@dimen/text_size_small"
-            tools:ignore="LabelFor,VisualLintTextFieldSize" />
-
-        <TextView
-            android:id="@+id/textAge"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/age"
-            android:textSize="@dimen/text_size_large"
-            android:layout_below="@id/editGroupNum"
-            android:layout_marginTop="16dp" />
-
-        <EditText
-            android:id="@+id/editAge"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/textAge"
-            android:layout_marginTop="8dp"
-            android:autofillHints=""
-            android:background="@color/material_dynamic_neutral_variant20"
-            android:hint="@string/AgeText"
-            android:inputType=""
-            android:minHeight="48dp"
-            android:textColor="@color/material_dynamic_neutral70"
-            android:textSize="@dimen/text_size_small"
-            tools:ignore="LabelFor,VisualLintTextFieldSize" />
-
-        <TextView
-            android:id="@+id/textMark"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/mark"
-            android:textSize="@dimen/text_size_large"
-            android:layout_below="@id/editAge"
-            android:layout_marginTop="16dp" />
-
-        <EditText
-            android:id="@+id/editMark"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/textMark"
-            android:layout_marginTop="8dp"
-            android:autofillHints=""
-            android:background="@color/material_dynamic_neutral_variant20"
-            android:hint="@string/markText"
-            android:inputType=""
-            android:minHeight="48dp"
-            android:textColor="@color/material_dynamic_neutral70"
-            android:textSize="@dimen/text_size_small"
-            tools:ignore="LabelFor,VisualLintTextFieldSize" />
     </RelativeLayout>
-
-    <!-- FrameLayout: Поверх всего -->
-    <FrameLayout
-        android:id="@+id/frameExample"
-        android:layout_width="150dp"
-        android:layout_height="150dp"
-        android:layout_marginTop="16dp"
-        app:layout_constraintTop_toBottomOf="@+id/relativeInputs"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        tools:ignore="VisualLintBounds">
-
-        <ImageView
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:contentDescription="@string/MyMemogi"
-            android:src="@drawable/memogi" />
-    </FrameLayout>
-
 </androidx.constraintlayout.widget.ConstraintLayout>

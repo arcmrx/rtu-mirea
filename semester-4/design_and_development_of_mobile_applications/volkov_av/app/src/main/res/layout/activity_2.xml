@@ -54,7 +54,7 @@
         tools:ignore="MissingConstraints" />
 
     <Button
-        android:id="@+id/button"
+        android:id="@+id/moreInfButton"
         android:layout_width="241dp"
         android:layout_height="69dp"
         android:backgroundTint="@color/md_theme_inverseSurface_mediumContrast"

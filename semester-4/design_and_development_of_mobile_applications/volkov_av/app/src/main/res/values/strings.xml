@@ -1,18 +1,18 @@
 <resources>
     <string name="app_name">volkov_a.v</string>
-    <string name="MyMemogi">My Memogi</string>
-    <string name="Run1">Run</string>
-    <string name="Run2">Test</string>
+    <string name="Run1">Next</string>
     <string name="TextMessage">textMessage</string>
     <string name="GroupNum">Группа №</string>
-    <string name="back">BACK</string>
-    <string name="FullName">ФИО</string>
+    <string name="back">Назад</string>
+    <string name="FullName">Фамилия и имя</string>
     <string name="age">Возраст</string>
     <string name="mark">Оценка</string>
     <string name="markText">0-10</string>
-    <string name="FullNameText">Иванов Иван Иванович</string>
+    <string name="FullNameText">Иванов Иван</string>
     <string name="GroupNumText">ИКБО-66-23</string>
     <string name="AgeText">0-100</string>
+    <string name="MoreInformation">Ввести информацию</string>
+    <string name="MoreInfText">Дополнительная информация:</string>
     <dimen name="text_size_large">24sp</dimen>
     <dimen name="text_size_small">16sp</dimen>
 </resources>

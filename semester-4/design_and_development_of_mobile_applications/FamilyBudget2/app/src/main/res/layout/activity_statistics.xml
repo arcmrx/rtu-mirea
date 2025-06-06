@@ -1,0 +1,39 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/md_theme_background"
+    android:orientation="vertical"
+    android:padding="16dp">
+
+    <TextView
+        android:id="@+id/tv_total_income"
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+        android:text="Доходов: 0 ₽"
+        android:textColor="#DFE4DD"
+        android:textSize="24sp" />
+
+    <TextView
+        android:id="@+id/tv_total_expense"
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+        android:text="Расходов: 0 ₽"
+        android:textColor="#DFE4DD"
+        android:textSize="24sp" />
+
+    <TextView
+        android:id="@+id/tv_balance"
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+        android:background="@color/md_theme_background"
+        android:text="Баланс: 0 ₽"
+        android:textColor="#DFE4DD"
+        android:textSize="24sp" />
+
+    <com.github.mikephil.charting.charts.PieChart
+        android:background="#1B211D"
+        android:id="@+id/pie_chart"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:textColor="#DFE4DD" />
+</LinearLayout>

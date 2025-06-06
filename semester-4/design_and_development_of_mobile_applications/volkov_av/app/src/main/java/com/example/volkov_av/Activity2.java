@@ -19,7 +19,7 @@ public class NewActivity extends AppCompatActivity {
         MyObject myObject = (MyObject)
                 getIntent().getSerializableExtra("myObject");
         if (myObject != null) {
-            String message = "\n\nName: " + myObject.getName() + "\nGroup: " + myObject.getGroup() + "\nAge: " + myObject.getAge() + "\nMark: " + myObject.getMark();
+            String message = "Фамилия и имя:\n" + myObject.getName();
             messageText.setText(message);
         }
 

@@ -1,62 +1,149 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/main"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/md_theme_onBackground"
-    tools:context=".MainActivity">
+    android:background="@color/md_theme_background"
+    android:orientation="vertical"
+    android:padding="16dp">
 
-
-    <Button
-        android:id="@+id/buttonProgrammatically"
-        android:layout_width="241dp"
-        android:layout_height="69dp"
-        android:backgroundTint="@color/md_theme_inverseSurface_mediumContrast"
-        android:onClick="onActivity2"
-        android:text="@string/Run1"
-        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
-        android:textSize="20sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.502"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/relativeInputs"
-        tools:ignore="MissingConstraints" />
-
-    <RelativeLayout
-        android:id="@+id/relativeInputs"
+    <!-- Карточка баланса -->
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:padding="76dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        android:background="@drawable/card_background"
+        android:orientation="vertical"
+        android:padding="16dp"
+        android:layout_marginBottom="24dp">
 
         <TextView
-            android:id="@+id/textFIO"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/FullName"
-            android:textColor="#FFFFFF"
-            android:textSize="@dimen/text_size_large" />
-
-        <EditText
-            android:id="@+id/editName"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_below="@id/textFIO"
-            android:layout_marginTop="8dp"
-            android:autofillHints=""
-            android:background="@color/material_dynamic_neutral_variant20"
-            android:hint="@string/FullNameText"
-            android:inputType="textPersonName"
-            android:minHeight="48dp"
-            android:textColor="@color/material_dynamic_neutral70"
-            android:textSize="@dimen/text_size_small"
-            tools:ignore="LabelFor,VisualLintTextFieldSize" />
+            android:text="Баланс"
+            android:textColor="#B2DFE4DD"
+            android:textSize="18sp"
+            android:layout_marginBottom="8dp"/>
 
-    </RelativeLayout>
-</androidx.constraintlayout.widget.ConstraintLayout>
+        <TextView
+            android:id="@+id/tv_balance"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="0.0 ₽"
+            android:textColor="#DFE4DD"
+            android:textSize="32sp"
+            android:textStyle="bold"/>
+    </LinearLayout>
+
+    <!-- Пространство для будущего списка (RecyclerView) -->
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:background="#201B211D"
+        android:visibility="visible"/>
+
+    <!-- Панель кнопок внизу -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/card_background"
+        android:orientation="horizontal"
+        android:paddingVertical="16dp"
+        android:layout_marginTop="16dp">
+
+        <!-- Кнопка дохода -->
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:gravity="center">
+
+            <ImageButton
+                android:id="@+id/btn_add_income"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:background="@drawable/button_circle_background"
+                android:src="@drawable/add_circle_48px"
+                android:scaleType="centerInside"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Доход"
+                android:textColor="#DFE4DD"
+                android:layout_marginTop="8dp"/>
+        </LinearLayout>
+
+        <!-- Кнопка расхода -->
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:gravity="center">
+
+            <ImageButton
+                android:id="@+id/btn_add_expense"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:background="@drawable/button_circle_background"
+                android:src="@drawable/do_not_disturb_on_48px"
+                android:scaleType="centerInside"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Расход"
+                android:textColor="#DFE4DD"
+                android:layout_marginTop="8dp"/>
+        </LinearLayout>
+
+        <!-- Кнопка истории -->
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:gravity="center">
+
+            <ImageButton
+                android:id="@+id/btn_history"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:background="@drawable/button_circle_background"
+                android:src="@drawable/history_48px"
+                android:scaleType="centerInside"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="История"
+                android:textColor="#DFE4DD"
+                android:layout_marginTop="8dp"/>
+        </LinearLayout>
+
+        <!-- Кнопка статистики -->
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:gravity="center">
+
+            <ImageButton
+                android:id="@+id/btn_stats"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:background="@drawable/button_circle_background"
+                android:src="@drawable/data_usage_48px"
+                android:scaleType="centerInside"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Статистика"
+                android:textColor="#DFE4DD"
+                android:layout_marginTop="8dp"/>
+        </LinearLayout>
+    </LinearLayout>
+</LinearLayout>
